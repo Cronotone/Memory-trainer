@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Memory Trainer</h1>
+
+  <div id="savedParagraphsBar" class="saved-paragraphs-bar" style="display:none" aria-hidden="true"></div>
+
+  <textarea id="paragraph" placeholder="Paste your paragraph here..."></textarea>
+
+  <div style="text-align:center; margin-top:8px;">
+    <button id="restoreParagraphBtn" style="display:none">Restore last paragraph</button>
+    <button id="newParagraphBtn">New paragraph</button>
+  </div>
+
+  <button id="splitBtn">Split into sentences</button>
+  <button id="splitSmallBtn">Split smaller</button>
+  <button id="startBtn" disabled>Start training</button>
+  <button id="requestMicBtn">Request Microphone</button>
+<label style="display:block; margin:10px 0;">
+  Chunk size: <span id="chunkSizeLabel">14</span> words
+  <input id="chunkSize" type="range" min="6" max="25" value="14">
+</label>
+<label style="display:block; margin:10px 0;">
+  Memorise time: <span id="memorizeTimeLabel">10</span>s
+  <input id="memorizeTime" type="range" min="5" max="30" value="10">
+</label>
+<div id="recallMode" style="margin:14px auto; max-width:880px; text-align:center;">
+  <div style="font-weight:600; margin-bottom:6px;">Recall mode</div>
+
+  <label style="margin-right:14px; cursor:pointer;">
+    <input type="radio" name="recallMode" value="normal" checked>
+    Normal (single chunks)
+  </label>
+
+  <label style="cursor:pointer;">
+    <input type="radio" name="recallMode" value="pairs">
+    Pairs + checkpoints (recommended)
+  </label>
+</div>
+
+
+  <ul id="sentenceList"></ul>
+
+  <script src="app.js?v=4"></script>
+</body>
+</html>
